@@ -1,8 +1,12 @@
-@objc(MaskImage)
-class MaskImage: NSObject {
+import Foundation
+@objc(MaskImageView)
+class MaskImageView: RCTViewManager {
 
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
-    }
+  override func view() -> UIView! {
+    return MaskShapeImageView()
+  }
+
+  override static func requiresMainQueueSetup() -> Bool {
+    return true
+  }
 }

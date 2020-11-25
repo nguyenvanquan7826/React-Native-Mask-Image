@@ -1,27 +1,43 @@
 # react-native-mask-image
 
-mask-image
+MaskImageView with custome shape
+
+
+![alt text](https://i.imgur.com/nNlWrkf.png "Logo Title Text 1")
 
 ## Installation
 
 ```sh
-npm install react-native-mask-image
+yarn install react-native-mask-image
 ```
 
 ## Usage
 
 ```js
-import MaskImage from "react-native-mask-image";
+import * as React from 'react';
+import { View } from 'react-native';
+import { MaskImageView } from 'react-native-mask-image';
 
-// ...
+export default function App() {
 
-const result = await MaskImage.multiply(3, 7);
+  return (
+    <View style={{
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'green',
+    }}>
+
+      <MaskImageView
+        urlImage={'https://i.imgur.com/7rgorlG.png'}
+        urlMask={'https://i.imgur.com/zFJmEop.png'}
+        style={{
+          width: 200,
+          height: 200,
+        }}
+      />
+    </View>
+  );
+}
+
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT

@@ -1,25 +1,25 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import MaskImage from 'react-native-mask-image';
+import { View } from 'react-native';
+import { MaskImageView } from 'react-native-mask-image';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    MaskImage.multiply(3, 7).then(setResult);
-  }, []);
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
+    <View style={{
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'green',
+    }}>
+
+      <MaskImageView
+        urlImage={'https://i.imgur.com/7rgorlG.png'}
+        urlMask={'https://i.imgur.com/zFJmEop.png'}
+        style={{
+          width: 200,
+          height: 200,
+        }}
+      />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
