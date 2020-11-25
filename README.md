@@ -8,7 +8,7 @@ MaskImageView with custome shape
 ## Installation
 
 ```sh
-yarn install react-native-mask-image
+yarn add react-native-mask-image
 ```
 
 ## Usage
